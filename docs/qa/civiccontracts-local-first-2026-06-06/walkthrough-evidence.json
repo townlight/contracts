@@ -1,0 +1,134 @@
+{
+  "base": "http://127.0.0.1:18174",
+  "checks": [
+    {
+      "name": "health",
+      "status": "passed",
+      "value": {
+        "status": "ok",
+        "service": "civiccontracts",
+        "version": "0.1.1",
+        "civiccore_version": "1.2.0"
+      }
+    },
+    {
+      "name": "readiness",
+      "status": "passed",
+      "value": {
+        "status": "ready",
+        "ready": true,
+        "registry_database_configured": true,
+        "registry_database_url": "sqlite+pysqlite:///C:/dev/Claude/civiccontracts/.tmp-walkthrough-data/civiccontracts-registry.db",
+        "using_default_local_database": true,
+        "schema_ready": true,
+        "schema_version": "civiccontracts-local-first-v1",
+        "expected_schema_version": "civiccontracts-local-first-v1",
+        "blockers": []
+      }
+    },
+    {
+      "name": "contracts",
+      "status": "passed",
+      "value": {
+        "module": "civiccontracts",
+        "version": "0.1.1",
+        "contracts": [
+          {
+            "name": "civiccontracts.contract_draft.v1",
+            "endpoint": "/api/v1/civiccontracts/drafts/from-procurement",
+            "method": "POST",
+            "boundary": "Creates staff-review contract drafts; it does not execute contracts or provide legal advice."
+          },
+          {
+            "name": "civiccontracts.staff_review_queue.v1",
+            "endpoint": "/api/v1/civiccontracts/staff/reviews",
+            "method": "GET",
+            "requires_staff_key": true,
+            "boundary": "Staff-only queue for draft review before signature, agenda action, or publication."
+          },
+          {
+            "name": "civiccontracts.procurement_handoff.v1",
+            "endpoint": "/api/v1/civiccontracts/drafts/from-procurement",
+            "method": "POST",
+            "source_module": "civicprocure",
+            "boundary": "Consumes CivicProcure award/RFP identifiers without making award or legal decisions."
+          },
+          {
+            "name": "civiccontracts.records_export.v1",
+            "endpoint": "/api/v1/civiccontracts/export",
+            "method": "POST",
+            "boundary": "Builds records export checklists; it does not publish or redact records."
+          }
+        ],
+        "downstream_ready_for": [
+          "civicprocure award packet contract routing",
+          "civicclerk agenda contract approvals",
+          "civicrecords-ai contract file retention",
+          "civiclegal counsel review queue"
+        ]
+      }
+    },
+    {
+      "name": "draft-create",
+      "status": "passed",
+      "value": {
+        "draft_id": "contract-draft-c1341628fb37",
+        "contract_id": "ct-walkthrough-001",
+        "vendor_name": "Apex Construction",
+        "contract_type": "public works construction",
+        "procurement_packet_id": "rfp-walkthrough-001",
+        "award_packet_id": "award-walkthrough-001",
+        "source_module": "civicprocure",
+        "source_title": "Bridge repair award",
+        "terms_summary": "Construction award with bonding and retainage review.",
+        "review_items": [
+          "Attach executed agreement, amendments, insurance certificates, and source file links.",
+          "Confirm department owner, renewal authority, and public-records classification.",
+          "Flag bonding, retainage, and change-order language for staff/legal review.",
+          "Confirm procurement award authority, signature authority, insurance, and funding source.",
+          "Route draft to staff/legal review before execution or publication."
+        ],
+        "disclaimer": "CivicContracts provides contract-repository support only. Staff own every decision; the module does not interpret legal obligations, approve renewals, provide legal advice, execute contracts, or replace the contract system of record.",
+        "staff_review_id": "contract-review-f2cb91233d5c",
+        "created_at": "2026-06-06T21:00:27.253280+00:00",
+        "updated_at": "2026-06-06T21:00:27.253280+00:00",
+        "boundary": "CivicContracts drafts support staff review only; they do not execute contracts, provide legal advice, approve procurement awards, publish records, or update a contract system of record."
+      }
+    },
+    {
+      "name": "draft-fetch",
+      "status": "passed",
+      "value": {
+        "draft_id": "contract-draft-c1341628fb37",
+        "contract_id": "ct-walkthrough-001",
+        "vendor_name": "Apex Construction",
+        "contract_type": "public works construction",
+        "procurement_packet_id": "rfp-walkthrough-001",
+        "award_packet_id": "award-walkthrough-001",
+        "source_module": "civicprocure",
+        "source_title": "Bridge repair award",
+        "terms_summary": "Construction award with bonding and retainage review.",
+        "review_items": [
+          "Attach executed agreement, amendments, insurance certificates, and source file links.",
+          "Confirm department owner, renewal authority, and public-records classification.",
+          "Flag bonding, retainage, and change-order language for staff/legal review.",
+          "Confirm procurement award authority, signature authority, insurance, and funding source.",
+          "Route draft to staff/legal review before execution or publication."
+        ],
+        "disclaimer": "CivicContracts provides contract-repository support only. Staff own every decision; the module does not interpret legal obligations, approve renewals, provide legal advice, execute contracts, or replace the contract system of record.",
+        "staff_review_id": null,
+        "created_at": "2026-06-06T21:00:27.253280",
+        "updated_at": "2026-06-06T21:00:27.253280",
+        "boundary": "CivicContracts drafts support staff review only; they do not execute contracts, provide legal advice, approve procurement awards, publish records, or update a contract system of record."
+      }
+    },
+    {
+      "name": "staff-queue-keyless-denied",
+      "status": "passed",
+      "value": {
+        "status": 503,
+        "body": "{\"detail\":{\"message\":\"Staff API key auth is not configured.\",\"fix\":\"Set CIVICCONTRACTS_STAFF_API_KEY before using staff-only routes.\"}}"
+      }
+    }
+  ]
+}
