@@ -116,3 +116,16 @@ def test_public_ui_route_is_accessible_and_honest() -> None:
     assert "v0.1.1 contract repository foundation" in text
     assert "does not interpret legal obligations" in text
     assert "contract system of record" in text
+
+
+def test_staff_ui_route_is_accessible_and_uses_safe_dom_updates() -> None:
+    response = client.get("/civiccontracts/staff")
+    assert response.status_code == 200
+    assert "text/html" in response.headers["content-type"]
+    text = response.text
+    assert '<main id="main" tabindex="-1">' in text
+    assert "Contract draft review" in text
+    assert "/api/v1/civiccontracts/drafts/from-procurement" in text
+    assert "/api/v1/civiccontracts/staff/reviews" in text
+    assert "textContent" in text
+    assert "innerHTML" not in text

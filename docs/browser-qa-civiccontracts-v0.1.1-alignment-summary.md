@@ -4,7 +4,7 @@ Date: 2026-04-28
 
 Scope:
 
-- `docs/index.html` landing page after v0.1.1 / civiccore 0.3.0 alignment.
+- `docs/index.html` landing page after v0.1.1 / civiccore v1.2.0 alignment.
 - Generated public UI from `civiccontracts.public_ui.render_public_lookup_page()`.
 
 Evidence:
@@ -17,6 +17,6 @@ Evidence:
 Findings:
 
 - Version labels show v0.1.1.
-- CivicCore dependency language shows `civiccore==0.3.0`.
+- CivicCore dependency language shows the published `civiccore v1.2.0` release wheel.
 - Public-facing capability boundary remains honest: no legal interpretation, renewal approval, contract execution, legal advice, live LLM calls, live contract management platforms, or contract system-of-record replacement.
 - Mobile screenshots render without right-edge clipping.

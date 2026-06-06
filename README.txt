@@ -3,7 +3,7 @@ CivicContracts
 
 CivicContracts is the CivicSuite module for central contract registry support, clause topic lookup, expiration tracking, renewal visibility, and public-records-aware exports.
 
-Current state: v0.1.1 contract repository foundation plus registry persistence release. It ships deterministic sample helpers, optional database-backed contract registry and renewal visibility records, and an accessible public sample UI at /civiccontracts, aligned to civiccore==0.3.0.
+Current state: v0.1.1 local-first contract drafting and registry runtime. It ships deterministic sample helpers, default local SQLite-backed contract registry, renewal visibility records, contract drafts, staff review queues, integration contracts, an accessible public sample UI at /civiccontracts, and a staff workspace at /civiccontracts/staff, aligned to the published CivicCore v1.2.0 release wheel.
 
 Not shipped: live contract management platforms, official legal interpretation, legal advice, live LLM calls, contract execution workflows, or contract system-of-record integrations.
 

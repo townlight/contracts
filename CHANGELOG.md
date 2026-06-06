@@ -4,6 +4,15 @@ All notable changes to CivicContracts will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Added
+
+- Default local SQLite-backed contract registry, renewal visibility, contract draft, and staff review queue persistence via `CIVICCONTRACTS_DATA_DIR`.
+- Staff workspace at `/civiccontracts/staff` plus staff-key protected review queue endpoints.
+- CivicProcure procurement handoff contract draft endpoint and suite integration-contract metadata.
+- CivicCore v1.2.0 release-wheel dependency alignment for staff key gating.
+
 ## [0.1.1] - 2026-04-28
 
 ### Added
@@ -13,7 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- Aligned CivicContracts to `civiccore==0.3.0`.
+- Aligned CivicContracts to the published `civiccore v1.2.0` release wheel.
 - Updated current-facing docs, release gate, CI wheel install, health/version tests, and browser QA evidence for the v0.1.1 compatibility release.
 
 ## [0.1.0] - 2026-04-27
