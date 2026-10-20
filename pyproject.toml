@@ -8,7 +8,7 @@ version = "0.1.1"
 description = "CivicContracts runtime foundation for contract registry, clause lookup, expiration tracking, renewal visibility, and public-records-aware export support."
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "Apache-2.0" }
+license = { text = "AGPL-3.0-only" }
 authors = [
   { name = "CivicSuite contributors" }
 ]
