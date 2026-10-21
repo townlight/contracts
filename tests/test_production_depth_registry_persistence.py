@@ -85,7 +85,7 @@ def test_get_contract_without_persistence_returns_actionable_503(monkeypatch) ->
 
     assert response.status_code == 503
     detail = response.json()["detail"]
-    assert detail["message"] == "CivicContracts registry persistence is not configured."
+    assert detail["message"] == "Townlight Contracts registry persistence is not configured."
     assert "Set CIVICCONTRACTS_REGISTRY_DB_URL" in detail["fix"]
 
 

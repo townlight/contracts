@@ -1,14 +1,14 @@
-# CivicContracts User Manual
+# Townlight Contracts User Manual
 
 ## For Non-Technical Users
 
-CivicContracts helps city staff keep contract records, clause topics, expiration dates, renewal notes, public-records review notes, and export manifests organized. It can create a sample contract registry stub, flag clause topics, build expiration reminders, summarize renewal visibility, and assemble a public-records export checklist.
+Townlight Contracts helps city staff keep contract records, clause topics, expiration dates, renewal notes, public-records review notes, and export manifests organized. It can create a sample contract registry stub, flag clause topics, build expiration reminders, summarize renewal visibility, and assemble a public-records export checklist.
 
-Current state: `0.1.1` contract repository foundation plus registry persistence release. CivicContracts can optionally save contract registry and renewal visibility records when IT configures `CIVICCONTRACTS_REGISTRY_DB_URL`. CivicContracts does not provide official legal interpretation, legal advice, live contract management platforms, live LLM calls, contract execution workflows, renewal approvals, or contract system-of-record updates. Staff own every decision.
+Current state: `0.1.1` contract repository foundation plus registry persistence release. Townlight Contracts can optionally save contract registry and renewal visibility records when IT configures `CIVICCONTRACTS_REGISTRY_DB_URL`. Townlight Contracts does not provide official legal interpretation, legal advice, live contract management platforms, live LLM calls, contract execution workflows, renewal approvals, or contract system-of-record updates. Staff own every decision.
 
 ## For IT and Technical Staff
 
-CivicContracts is a FastAPI Python package pinned to `civiccore==0.3.0`. The current runtime exposes:
+Townlight Contracts is a FastAPI Python package pinned to `civiccore==0.3.0`. The current runtime exposes:
 
 - `GET /`
 - `GET /health`
@@ -29,7 +29,7 @@ python -m pytest -q
 bash scripts/verify-release.sh
 ```
 
-Set `CIVICCONTRACTS_REGISTRY_DB_URL` to enable local SQLAlchemy-backed contract registry and renewal visibility records. If the variable is not set, CivicContracts keeps deterministic stateless behavior and retrieval endpoints return actionable configuration guidance.
+Set `CIVICCONTRACTS_REGISTRY_DB_URL` to enable local SQLAlchemy-backed contract registry and renewal visibility records. If the variable is not set, Townlight Contracts keeps deterministic stateless behavior and retrieval endpoints return actionable configuration guidance.
 
 ## Architecture
 
@@ -41,4 +41,4 @@ flowchart LR
   CivicContracts --> Export["Public-records export checklist"]
 ```
 
-CivicContracts depends on CivicCore. CivicCore does not depend on CivicContracts. CivicContracts v0.1.1 uses deterministic sample contract data plus optional local registry persistence; live contract management platforms, CivicRecords file links, staff review queues, and production contract-system integrations are future work.
+Townlight Contracts depends on Townlight Core. Townlight Core does not depend on Townlight Contracts. Townlight Contracts v0.1.1 uses deterministic sample contract data plus optional local registry persistence; live contract management platforms, Townlight Records file links, staff review queues, and production contract-system integrations are future work.

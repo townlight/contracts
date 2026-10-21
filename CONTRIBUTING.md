@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for helping CivicContracts become useful municipal software.
+Thank you for helping Townlight Contracts become useful municipal software.
 
 ## Development Loop
 
@@ -11,7 +11,7 @@ Thank you for helping CivicContracts become useful municipal software.
 
 ## Boundaries
 
-- CivicContracts gives contract-support drafts, not official legal interpretations, renewal approvals, executions, legal advice, or system-of-record updates.
+- Townlight Contracts gives contract-support drafts, not official legal interpretations, renewal approvals, executions, legal advice, or system-of-record updates.
 - Do not present generated clause lookups, expiration flags, renewal summaries, or records exports as decision-ready without staff review.
-- Do not import CivicCore placeholder packages.
+- Do not import Townlight Core placeholder packages.
 - Do not claim planned behavior is shipped.

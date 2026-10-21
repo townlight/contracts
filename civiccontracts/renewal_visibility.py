@@ -1,4 +1,4 @@
-"""Renewal visibility helpers for CivicContracts v0.1.1."""
+"""Renewal visibility helpers for Townlight Contracts v0.1.1."""
 
 from __future__ import annotations
 

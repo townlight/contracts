@@ -1,17 +1,17 @@
-"""Static public UI shell for CivicContracts v0.1.1."""
+"""Static public UI shell for Townlight Contracts v0.1.1."""
 
 from __future__ import annotations
 
 
 def render_public_lookup_page() -> str:
-    """Render the public-facing CivicContracts sample page."""
+    """Render the public-facing Townlight Contracts sample page."""
 
     return """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CivicContracts Contract Repository Support</title>
+<title>Townlight Contracts Contract Repository Support</title>
 <style>
   :root { --ink:#18212b; --muted:#56606a; --paper:#f8fbff; --blue:#284f73; --green:#2f654c; --gold:#d7aa45; --line:#c7d4e2; }
   * { box-sizing: border-box; }
@@ -44,9 +44,9 @@ def render_public_lookup_page() -> str:
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <header>
-  <p class="eyebrow">CivicSuite / CivicContracts public sample</p>
+  <p class="eyebrow">Townlight / Townlight Contracts public sample</p>
   <h1>Keep contract obligations visible before they become emergencies.</h1>
-  <p class="lede">CivicContracts demonstrates contract repository support: registry stubs, clause topic lookup, expiration reminders, renewal visibility, and public-records-aware export checklists without interpreting legal obligations.</p>
+  <p class="lede">Townlight Contracts demonstrates contract repository support: registry stubs, clause topic lookup, expiration reminders, renewal visibility, and public-records-aware export checklists without interpreting legal obligations.</p>
   <p><span class="badge">v0.1.1 contract repository foundation</span></p>
 </header>
 <main id="main" tabindex="-1">
@@ -61,13 +61,13 @@ def render_public_lookup_page() -> str:
         <ul><li>Attach executed agreement, amendments, insurance certificates, and source file links.</li><li>Flag renewal, termination, insurance, indemnification, and public-records topics.</li><li>Create 180/120/90/30-day expiration reminders.</li></ul>
       </div>
     </article>
-    <article class="card"><p class="kicker">Clause lookup</p><h2>Topics, not advice</h2><div class="result"><p>CivicContracts can flag common clause topics, but staff and legal counsel interpret the contract.</p></div></article>
+    <article class="card"><p class="kicker">Clause lookup</p><h2>Topics, not advice</h2><div class="result"><p>Townlight Contracts can flag common clause topics, but staff and legal counsel interpret the contract.</p></div></article>
     <article class="card"><p class="kicker">Renewals</p><h2>Visibility first</h2><div class="result"><p>Renewal helpers surface authority, notice deadlines, budget context, and department notes for staff review.</p></div></article>
     <article class="card"><p class="kicker">Records export</p><h2>Preserve provenance</h2><div class="result"><p>Exports preserve agreements, amendments, renewal notes, expiration reminders, public-records review notes, and retention classification.</p></div></article>
-    <article class="card large"><p class="kicker">Boundary</p><h2>No official legal interpretation</h2><div class="result warning"><p>CivicContracts does not interpret legal obligations, approve renewals, provide legal advice, call live LLMs, execute contracts, or replace the contract system of record.</p></div></article>
+    <article class="card large"><p class="kicker">Boundary</p><h2>No official legal interpretation</h2><div class="result warning"><p>Townlight Contracts does not interpret legal obligations, approve renewals, provide legal advice, call live LLMs, execute contracts, or replace the contract system of record.</p></div></article>
   </section>
 </main>
-<footer><p>CivicContracts is part of the AGPL-3.0 CivicSuite open-source municipal AI project.</p></footer>
+<footer><p>Townlight Contracts is part of the AGPL-3.0 Townlight open-source municipal AI project.</p></footer>
 </body>
 </html>
 """

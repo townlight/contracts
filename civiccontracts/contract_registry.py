@@ -1,4 +1,4 @@
-"""Deterministic contract registry helpers for CivicContracts v0.1.1."""
+"""Deterministic contract registry helpers for Townlight Contracts v0.1.1."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 
 DISCLAIMER = (
-    "CivicContracts provides contract-repository support only. Staff own every decision; "
+    "Townlight Contracts provides contract-repository support only. Staff own every decision; "
     "the module does not interpret legal obligations, approve renewals, provide legal advice, "
     "execute contracts, or replace the contract system of record."
 )

@@ -1,8 +1,10 @@
 # GitHub Discussions Seed Posts
 
-## Welcome to CivicContracts
+<a id="welcome-to-civiccontracts"></a>
 
-CivicContracts is the CivicSuite module for contract registry, clause topic lookup, expiration tracking, renewal visibility, and public-records-aware export checklists.
+## Welcome to Townlight Contracts
+
+Townlight Contracts is the Townlight module for contract registry, clause topic lookup, expiration tracking, renewal visibility, and public-records-aware export checklists.
 
 ## v0.1.1 Release Discussion
 
