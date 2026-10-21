@@ -1,4 +1,4 @@
-"""Public-records-aware export helpers for CivicContracts v0.1.1."""
+"""Public-records-aware export helpers for Townlight Contracts v0.1.1."""
 
 from __future__ import annotations
 

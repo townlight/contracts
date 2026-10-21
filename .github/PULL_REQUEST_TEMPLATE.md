@@ -1,6 +1,6 @@
 ## Summary
 
-Describe the CivicContracts change in one or two sentences.
+Describe the Townlight Contracts change in one or two sentences.
 
 ## Scope
 
@@ -23,4 +23,4 @@ Paste actual command output or screenshots for every checked item:
 - [ ] This PR does not claim official legal interpretation or renewal approval authority.
 - [ ] This PR does not provide legal advice.
 - [ ] This PR keeps contract execution workflows and system-of-record updates out of scope unless explicitly shipped.
-- [ ] This PR does not import CivicCore placeholder packages.
+- [ ] This PR does not import Townlight Core placeholder packages.

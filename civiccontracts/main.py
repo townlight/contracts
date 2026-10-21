@@ -1,4 +1,4 @@
-"""FastAPI runtime foundation for CivicContracts."""
+"""FastAPI runtime foundation for Townlight Contracts."""
 
 import os
 from datetime import date
@@ -19,9 +19,9 @@ from civiccontracts.renewal_visibility import summarize_renewal_visibility
 
 
 app = FastAPI(
-    title="CivicContracts",
+    title='Townlight Contracts',
     version=__version__,
-    description="Contract repository, clause lookup, expiration tracking, renewal visibility, and public-records-aware export support for CivicSuite.",
+    description='Contract repository, clause lookup, expiration tracking, renewal visibility, and public-records-aware export support for Townlight.',
 )
 
 _registry_repository: ContractRegistryRepository | None = None
@@ -65,14 +65,14 @@ def root() -> dict[str, str]:
         "version": __version__,
         "status": "contract repository foundation plus registry persistence",
         "message": (
-            "CivicContracts package, API foundation, sample contract registry, clause lookup, "
+            "Townlight Contracts package, API foundation, sample contract registry, clause lookup, "
             "expiration tracking helper, renewal visibility helper, optional database-backed contract "
             "registry and renewal visibility records, public-records export checklist, and public UI "
             "foundation are online; live contract management platforms, official legal interpretation, "
             "legal advice, live LLM calls, contract execution workflows, and contract system-of-record "
             "integrations are not implemented yet."
         ),
-        "next_step": "Post-v0.1.1 roadmap: local contract catalog configuration, CivicRecords file links, and staff review queues",
+        "next_step": "Post-v0.1.1 roadmap: local contract catalog configuration, Townlight Records file links, and staff review queues",
     }
 
 
@@ -111,7 +111,7 @@ def get_contract_registry(contract_id: str) -> dict[str, object]:
         raise HTTPException(
             status_code=503,
             detail={
-                "message": "CivicContracts registry persistence is not configured.",
+                "message": "Townlight Contracts registry persistence is not configured.",
                 "fix": "Set CIVICCONTRACTS_REGISTRY_DB_URL to retrieve persisted contract registry records.",
             },
         )
@@ -167,7 +167,7 @@ def get_renewal_summary(contract_id: str) -> dict[str, object]:
         raise HTTPException(
             status_code=503,
             detail={
-                "message": "CivicContracts registry persistence is not configured.",
+                "message": "Townlight Contracts registry persistence is not configured.",
                 "fix": "Set CIVICCONTRACTS_REGISTRY_DB_URL to retrieve persisted renewal visibility records.",
             },
         )

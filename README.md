@@ -1,10 +1,14 @@
-# CivicContracts
+<a id="civiccontracts"></a>
 
-CivicContracts is the CivicSuite module for central contract registry support, clause topic lookup, expiration tracking, renewal visibility, and public-records-aware exports.
+# Townlight Contracts
+
+Townlight Contracts is the Townlight module for central contract registry support, clause topic lookup, expiration tracking, renewal visibility, and public-records-aware exports.
 
 Current state: **v0.1.1 contract repository foundation plus registry persistence release**. This repo ships a FastAPI package, health/root endpoints, documentation gates, deterministic sample contract registry, clause topic lookup, expiration tracking helper, renewal visibility helper, optional database-backed contract registry and renewal visibility records, public-records export checklist, and accessible public sample UI at `/civiccontracts`, aligned to `civiccore==0.3.0`. It does **not** ship live contract management platforms, official legal interpretation, legal advice, live LLM calls, contract execution workflows, or contract system-of-record integrations.
 
-## What CivicContracts Does
+<a id="what-civiccontracts-does"></a>
+
+## What Townlight Contracts Does
 
 - Create sample contract registry stubs and review notes.
 - Persist contract registry and renewal visibility records when `CIVICCONTRACTS_REGISTRY_DB_URL` is configured.
@@ -14,7 +18,9 @@ Current state: **v0.1.1 contract repository foundation plus registry persistence
 - Produce public-records-aware export checklists.
 - Demonstrate a public contract-support UI at `/civiccontracts`.
 
-## What CivicContracts Does Not Do
+<a id="what-civiccontracts-does-not-do"></a>
+
+## What Townlight Contracts Does Not Do
 
 - It does not interpret legal obligations.
 - It does not approve renewals or execute contracts.
@@ -25,7 +31,7 @@ Current state: **v0.1.1 contract repository foundation plus registry persistence
 ## API Surface
 
 - `GET /` returns the shipped/planned boundary.
-- `GET /health` returns package and CivicCore versions.
+- `GET /health` returns package and Townlight Core versions.
 - `GET /civiccontracts` returns the accessible public sample UI.
 - `POST /api/v1/civiccontracts/registry` returns a sample contract registry stub.
 - `GET /api/v1/civiccontracts/registry/{contract_id}` retrieves a persisted contract registry record when `CIVICCONTRACTS_REGISTRY_DB_URL` is configured.
