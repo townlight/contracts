@@ -21,4 +21,4 @@ API surface:
 
 Optional persistence: set CIVICCONTRACTS_REGISTRY_DB_URL to enable SQLAlchemy-backed contract registry and renewal visibility records. Without it, CivicContracts remains deterministic and stateless.
 
-License: code Apache License 2.0; documentation CC BY 4.0.
+License: code AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments (see LICENSE and LICENSE-EXCEPTION.md); documentation CC BY 4.0.

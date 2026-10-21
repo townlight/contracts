@@ -67,7 +67,7 @@ def render_public_lookup_page() -> str:
     <article class="card large"><p class="kicker">Boundary</p><h2>No official legal interpretation</h2><div class="result warning"><p>CivicContracts does not interpret legal obligations, approve renewals, provide legal advice, call live LLMs, execute contracts, or replace the contract system of record.</p></div></article>
   </section>
 </main>
-<footer><p>CivicContracts is part of the Apache 2.0 CivicSuite open-source municipal AI project.</p></footer>
+<footer><p>CivicContracts is part of the AGPL-3.0 CivicSuite open-source municipal AI project.</p></footer>
 </body>
 </html>
 """
