@@ -42,3 +42,9 @@ flowchart LR
 ```
 
 Townlight Contracts depends on Townlight Core. Townlight Core does not depend on Townlight Contracts. Townlight Contracts v0.2.0 uses deterministic sample contract data plus optional local registry persistence; live contract management platforms, Townlight Records file links, staff review queues, and production contract-system integrations are future work.
+
+In the Windows suite
+
+Register executed agreements, store their signed PDFs, and track staff-entered renewal deadlines.
+Staff operating guide: https://townlight.github.io/manuals/windows-staff-workflows.html#contracts
+Download: https://github.com/townlight/townlight/releases/tag/townlight-windows-v1.8.0.1

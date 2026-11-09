@@ -6,6 +6,10 @@
 
 Townlight Contracts helps city staff keep contract records, clause topics, expiration dates, renewal notes, public-records review notes, and export manifests organized. It can create a sample contract registry stub, flag clause topics, build expiration reminders, summarize renewal visibility, and assemble a public-records export checklist.
 
+## In the Windows suite
+
+Register executed agreements, store their signed PDFs, and track staff-entered renewal deadlines. Install the [signed Townlight Windows beta 1.8.0.1](https://github.com/townlight/townlight/releases/tag/townlight-windows-v1.8.0.1) and select the full profile. See the [staff operating guide](https://townlight.github.io/manuals/windows-staff-workflows.html#contracts). The package examples below describe the standalone development interface.
+
 Current state: `0.2.0` contract repository foundation plus registry persistence release. Townlight Contracts can optionally save contract registry and renewal visibility records when IT configures `TOWNLIGHT_CONTRACTS_REGISTRY_DB_URL`. Townlight Contracts does not provide official legal interpretation, legal advice, live contract management platforms, live LLM calls, contract execution workflows, renewal approvals, or contract system-of-record updates. Staff own every decision.
 
 ## For IT and Technical Staff
