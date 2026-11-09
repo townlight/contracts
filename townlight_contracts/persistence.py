@@ -6,8 +6,8 @@ from datetime import UTC, datetime
 import sqlalchemy as sa
 from sqlalchemy import Engine, create_engine
 
-from civiccontracts.contract_registry import ContractRecord, register_contract_stub
-from civiccontracts.renewal_visibility import summarize_renewal_visibility
+from townlight_contracts.contract_registry import ContractRecord, register_contract_stub
+from townlight_contracts.renewal_visibility import summarize_renewal_visibility
 
 
 metadata = sa.MetaData()
@@ -22,7 +22,7 @@ contract_registry_records = sa.Table(
     sa.Column("disclaimer", sa.Text(), nullable=False),
     sa.Column("created_at", sa.DateTime(timezone=True), nullable=False),
     sa.Column("updated_at", sa.DateTime(timezone=True), nullable=False),
-    schema="civiccontracts",
+    schema="townlight_contracts",
 )
 
 renewal_visibility_records = sa.Table(
@@ -35,7 +35,7 @@ renewal_visibility_records = sa.Table(
     sa.Column("visibility_items", sa.JSON(), nullable=False),
     sa.Column("staff_review_required", sa.Boolean(), nullable=False),
     sa.Column("created_at", sa.DateTime(timezone=True), nullable=False),
-    schema="civiccontracts",
+    schema="townlight_contracts",
 )
 
 
@@ -56,11 +56,14 @@ class ContractRegistryRepository:
     def __init__(self, *, db_url: str | None = None, engine: Engine | None = None) -> None:
         base_engine = engine or create_engine(db_url or "sqlite+pysqlite:///:memory:", future=True)
         if base_engine.dialect.name == "sqlite":
-            self.engine = base_engine.execution_options(schema_translate_map={"civiccontracts": None})
+            self.engine = base_engine.execution_options(schema_translate_map={"townlight_contracts": None})
         else:
             self.engine = base_engine
             with self.engine.begin() as connection:
-                connection.execute(sa.text("CREATE SCHEMA IF NOT EXISTS civiccontracts"))
+                schemas = set(sa.inspect(connection).get_schema_names())
+                if "civiccontracts" in schemas:
+                    raise RuntimeError("Migrate the legacy PostgreSQL schema before opening townlight_contracts.")
+                connection.execute(sa.text("CREATE SCHEMA IF NOT EXISTS townlight_contracts"))
         metadata.create_all(self.engine)
 
     def register_contract(

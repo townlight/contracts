@@ -18,8 +18,8 @@ PLACEHOLDERS = {
     "verification",
 }
 
-SOURCE_ROOT = Path("civiccontracts")
-PATTERN = re.compile(r"^\s*(?:from|import)\s+civiccore\.([a-z_]+)", re.MULTILINE)
+SOURCE_ROOT = Path("townlight_contracts")
+PATTERN = re.compile(r"^\s*(?:from|import)\s+townlight_core\.([a-z_]+)", re.MULTILINE)
 
 
 def main() -> int:
@@ -32,7 +32,7 @@ def main() -> int:
             package = match.group(1)
             if package in PLACEHOLDERS:
                 failures.append(
-                    f"{path}: civiccore.{package} is a placeholder package in v0.3.0. "
+                    f"{path}: townlight_core.{package} is a placeholder package in v0.3.0. "
                     "See AGENTS.md section 3.1."
                 )
 

@@ -2,12 +2,12 @@ from datetime import date
 
 from fastapi.testclient import TestClient
 
-from civiccontracts.clause_lookup import lookup_clause_topics
-from civiccontracts.contract_registry import register_contract_stub
-from civiccontracts.expiration_tracker import build_expiration_plan
-from civiccontracts.main import app
-from civiccontracts.records_export import build_contract_records_export
-from civiccontracts.renewal_visibility import summarize_renewal_visibility
+from townlight_contracts.clause_lookup import lookup_clause_topics
+from townlight_contracts.contract_registry import register_contract_stub
+from townlight_contracts.expiration_tracker import build_expiration_plan
+from townlight_contracts.main import app
+from townlight_contracts.records_export import build_contract_records_export
+from townlight_contracts.renewal_visibility import summarize_renewal_visibility
 
 
 client = TestClient(app)
@@ -64,7 +64,7 @@ def test_records_export_preserves_contract_context() -> None:
 
 def test_contract_support_apis_success_shape() -> None:
     registry = client.post(
-        "/api/v1/civiccontracts/registry",
+        "/api/v1/townlight_contracts/registry",
         json={
             "contract_id": "ct-2026-001",
             "vendor_name": "Acme Software",
@@ -72,18 +72,18 @@ def test_contract_support_apis_success_shape() -> None:
         },
     )
     clauses = client.post(
-        "/api/v1/civiccontracts/clauses/lookup",
+        "/api/v1/townlight_contracts/clauses/lookup",
         json={
             "query": "public records",
             "contract_text": "Confidential pricing and indemnification language appears here.",
         },
     )
     expirations = client.post(
-        "/api/v1/civiccontracts/expirations",
+        "/api/v1/townlight_contracts/expirations",
         json={"contract_id": "ct-2026-001", "expiration_date": "2026-12-31"},
     )
     renewals = client.post(
-        "/api/v1/civiccontracts/renewals/summary",
+        "/api/v1/townlight_contracts/renewals/summary",
         json={
             "contract_id": "ct-2026-001",
             "renewal_terms": "Automatic one-year renewal unless notice is given.",
@@ -91,7 +91,7 @@ def test_contract_support_apis_success_shape() -> None:
         },
     )
     export = client.post(
-        "/api/v1/civiccontracts/export",
+        "/api/v1/townlight_contracts/export",
         json={"title": "Software agreement", "contract_id": "ct-2026-001"},
     )
     assert registry.status_code == 200
@@ -107,12 +107,12 @@ def test_contract_support_apis_success_shape() -> None:
 
 
 def test_public_ui_route_is_accessible_and_honest() -> None:
-    response = client.get("/civiccontracts")
+    response = client.get("/townlight_contracts")
     assert response.status_code == 200
     assert "text/html" in response.headers["content-type"]
     text = response.text
     assert '<a class="skip-link" href="#main">Skip to main content</a>' in text
     assert '<main id="main" tabindex="-1">' in text
-    assert "v0.1.1 contract repository foundation" in text
+    assert "v0.2.0 contract repository foundation" in text
     assert "does not interpret legal obligations" in text
     assert "contract system of record" in text

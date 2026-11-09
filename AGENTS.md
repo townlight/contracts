@@ -1,4 +1,4 @@
-<a id="civiccontracts-agent-contract"></a>
+<a id="townlight_contracts-agent-contract"></a>
 
 # Townlight Contracts Agent Contract
 
@@ -11,10 +11,10 @@
 ## Hard Boundaries
 
 - Townlight Contracts never interprets legal obligations, approves renewals, executes contracts, provides legal advice, or updates a contract system of record.
-- Townlight Contracts v0.1.1 must not call live LLMs or live contract management platforms.
+- Townlight Contracts v0.2.0 must not call live LLMs or live contract management platforms.
 - Clause lookups, renewal visibility, and records exports must be marked staff-review-required where applicable.
 - Townlight Contracts depends on Townlight Core; Townlight Core must never depend on Townlight Contracts.
-- Townlight Contracts may reference Townlight Procurement and Townlight Records concepts only through released contracts or deterministic sample data in v0.1.1.
+- Townlight Contracts may reference Townlight Procurement and Townlight Records concepts only through released contracts or deterministic sample data in v0.2.0.
 
 ## Verification
 

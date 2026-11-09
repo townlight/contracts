@@ -1,4 +1,4 @@
-"""Deterministic contract registry helpers for Townlight Contracts v0.1.1."""
+"""Deterministic contract registry helpers for Townlight Contracts v0.2.0."""
 
 from __future__ import annotations
 

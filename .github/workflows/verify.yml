@@ -52,8 +52,8 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-      - name: Install CivicCore release wheel
-        run: python -m pip install https://github.com/CivicSuite/civiccore/releases/download/v0.3.0/civiccore-0.3.0-py3-none-any.whl
+      - name: Install the suite's pinned Townlight Core
+        run: python -m pip install git+https://github.com/townlight/core.git@3021821bf9a92c790a399ad12aed821d65b09105
       - name: Install package
         run: python -m pip install -e ".[dev]"
       - name: Run release gate
