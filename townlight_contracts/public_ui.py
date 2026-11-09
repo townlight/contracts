@@ -1,4 +1,4 @@
-"""Static public UI shell for Townlight Contracts v0.1.1."""
+"""Static public UI shell for Townlight Contracts v0.2.0."""
 
 from __future__ import annotations
 
@@ -47,7 +47,7 @@ def render_public_lookup_page() -> str:
   <p class="eyebrow">Townlight / Townlight Contracts public sample</p>
   <h1>Keep contract obligations visible before they become emergencies.</h1>
   <p class="lede">Townlight Contracts demonstrates contract repository support: registry stubs, clause topic lookup, expiration reminders, renewal visibility, and public-records-aware export checklists without interpreting legal obligations.</p>
-  <p><span class="badge">v0.1.1 contract repository foundation</span></p>
+  <p><span class="badge">v0.2.0 contract repository foundation</span></p>
 </header>
 <main id="main" tabindex="-1">
   <section class="grid" aria-labelledby="lookup-title">

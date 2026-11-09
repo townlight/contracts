@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0
+
+- Renamed the distribution to `townlight-contracts` and the import package to `townlight_contracts`.
+- Aligned with the Townlight Core version used by the Windows suite.
+
+
 All notable changes to CivicContracts will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
