@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "townlight-contracts"
-version = "0.2.0"
+version = "0.2.1"
 description = "Townlight Contracts runtime foundation for contract registry, clause lookup, expiration tracking, renewal visibility, and public-records-aware export support."
 readme = "README.md"
 requires-python = ">=3.11"

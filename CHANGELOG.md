@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 - Windows maintenance
+
+Include current staff authorization and package metadata corrections in the Windows maintenance composition.
+
 ## 0.2.0
 
 - Renamed the distribution to `townlight-contracts` and the import package to `townlight_contracts`.
