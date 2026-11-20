@@ -4,7 +4,7 @@ import townlight_contracts
 from townlight_contracts.main import app
 
 
-client = TestClient(app)
+client = TestClient(app, headers={"X-Townlight-Contracts-Staff-Key": "test-only-key", "X-Townlight-Contracts-Role": "staff"})
 
 
 def test_package_version() -> None:

@@ -10,7 +10,7 @@ from townlight_contracts.records_export import build_contract_records_export
 from townlight_contracts.renewal_visibility import summarize_renewal_visibility
 
 
-client = TestClient(app)
+client = TestClient(app, headers={"X-Townlight-Contracts-Staff-Key": "test-only-key", "X-Townlight-Contracts-Role": "staff"})
 
 
 def test_contract_registry_flags_owner_and_boundary() -> None:
