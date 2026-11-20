@@ -21,7 +21,7 @@ Townlight Contracts helps city staff keep contract records, clause topics, expir
 
 Register executed agreements, store their signed PDFs, and track staff-entered renewal deadlines. Install the [signed Townlight Windows beta 1.8.1.1](https://github.com/townlight/townlight/releases/tag/townlight-windows-v1.8.1.1) and select the full profile. See the [staff operating guide](https://townlight.github.io/manuals/windows-staff-workflows.html#contracts). The package examples below describe the standalone development interface.
 
-Current state: `0.2.0` contract repository foundation plus registry persistence release. Townlight Contracts can optionally save contract registry and renewal visibility records when IT configures `TOWNLIGHT_CONTRACTS_REGISTRY_DB_URL`. Townlight Contracts does not provide official legal interpretation, legal advice, live contract management platforms, live LLM calls, contract execution workflows, renewal approvals, or contract system-of-record updates. Staff own every decision.
+Current state: `0.2.1` contract repository foundation plus registry persistence release. Townlight Contracts can optionally save contract registry and renewal visibility records when IT configures `TOWNLIGHT_CONTRACTS_REGISTRY_DB_URL`. Townlight Contracts does not provide official legal interpretation, legal advice, live contract management platforms, live LLM calls, contract execution workflows, renewal approvals, or contract system-of-record updates. Staff own every decision.
 
 ## For IT and Technical Staff
 
@@ -58,7 +58,7 @@ flowchart LR
   Townlight Contracts --> Export["Public-records export checklist"]
 ```
 
-Townlight Contracts depends on Townlight Core. Townlight Core does not depend on Townlight Contracts. Townlight Contracts v0.2.0 uses deterministic sample contract data plus optional local registry persistence; live contract management platforms, Townlight Records file links, staff review queues, and production contract-system integrations are future work.
+Townlight Contracts depends on Townlight Core. Townlight Core does not depend on Townlight Contracts. Townlight Contracts v0.2.1 uses deterministic sample contract data plus optional local registry persistence; live contract management platforms, Townlight Records file links, staff review queues, and production contract-system integrations are future work.
 
 ## Upgrading standalone PostgreSQL data
 
