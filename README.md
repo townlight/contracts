@@ -19,7 +19,7 @@ Townlight Contracts is the Townlight module for central contract registry suppor
 
 Register executed agreements, store their signed PDFs, and track staff-entered renewal deadlines. Install the [signed Townlight Windows beta 1.8.1.1](https://github.com/townlight/townlight/releases/tag/townlight-windows-v1.8.1.1) and select the full profile. See the [staff operating guide](https://townlight.github.io/manuals/windows-staff-workflows.html#contracts). The package examples below describe the standalone development interface.
 
-Current state: **v0.2.0 contract repository foundation plus registry persistence release**. This repo ships a FastAPI package, health/root endpoints, documentation gates, deterministic sample contract registry, clause topic lookup, expiration tracking helper, renewal visibility helper, optional database-backed contract registry and renewal visibility records, public-records export checklist, and accessible public sample UI at `/townlight_contracts`, aligned to `townlight-core==1.3.0.dev2`. It does **not** ship live contract management platforms, official legal interpretation, legal advice, live LLM calls, contract execution workflows, or contract system-of-record integrations.
+Current state: **v0.2.1 contract repository foundation plus registry persistence release**. This repo ships a FastAPI package, health/root endpoints, documentation gates, deterministic sample contract registry, clause topic lookup, expiration tracking helper, renewal visibility helper, optional database-backed contract registry and renewal visibility records, public-records export checklist, and accessible public sample UI at `/townlight_contracts`, aligned to `townlight-core==1.3.0.dev2`. It does **not** ship live contract management platforms, official legal interpretation, legal advice, live LLM calls, contract execution workflows, or contract system-of-record integrations.
 
 <a id="what-townlight_contracts-does"></a>
 
@@ -40,7 +40,7 @@ Current state: **v0.2.0 contract repository foundation plus registry persistence
 - It does not interpret legal obligations.
 - It does not approve renewals or execute contracts.
 - It does not provide legal advice.
-- It does not call live LLMs in v0.2.0.
+- It does not call live LLMs in v0.2.1.
 - It does not replace a contract system of record.
 
 ## API Surface
