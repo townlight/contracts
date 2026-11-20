@@ -4,7 +4,8 @@ import os
 from datetime import date
 
 from townlight_core import __version__ as TOWNLIGHT_CORE_VERSION
-from fastapi import FastAPI, HTTPException
+from townlight_core.auth import staff_key_gate
+from fastapi import Depends, FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
@@ -23,6 +24,8 @@ app = FastAPI(
     version=__version__,
     description='Contract repository, clause lookup, expiration tracking, renewal visibility, and public-records-aware export support for Townlight.',
 )
+
+_require_staff_key = staff_key_gate("TOWNLIGHT_CONTRACTS_STAFF_API_KEY", "X-Townlight-Contracts-Staff-Key")
 
 _registry_repository: ContractRegistryRepository | None = None
 _registry_db_url: str | None = None
@@ -95,7 +98,7 @@ def public_townlight_contracts_page() -> str:
     return render_public_lookup_page()
 
 
-@app.post("/api/v1/townlight_contracts/registry")
+@app.post("/api/v1/townlight_contracts/registry", dependencies=[Depends(_require_staff_key)])
 def contract_registry(request: ContractRegistryRequest) -> dict[str, object]:
     result = _register_contract(
         contract_id=request.contract_id,
@@ -105,7 +108,7 @@ def contract_registry(request: ContractRegistryRequest) -> dict[str, object]:
     return result.__dict__
 
 
-@app.get("/api/v1/townlight_contracts/registry/{contract_id}")
+@app.get("/api/v1/townlight_contracts/registry/{contract_id}", dependencies=[Depends(_require_staff_key)])
 def get_contract_registry(contract_id: str) -> dict[str, object]:
     if _registry_database_url() is None:
         raise HTTPException(
@@ -127,7 +130,7 @@ def get_contract_registry(contract_id: str) -> dict[str, object]:
     return stored.__dict__
 
 
-@app.post("/api/v1/townlight_contracts/clauses/lookup")
+@app.post("/api/v1/townlight_contracts/clauses/lookup", dependencies=[Depends(_require_staff_key)])
 def clause_lookup(request: ClauseLookupRequest) -> dict[str, object]:
     return lookup_clause_topics(
         query=request.query,
@@ -135,7 +138,7 @@ def clause_lookup(request: ClauseLookupRequest) -> dict[str, object]:
     ).__dict__
 
 
-@app.post("/api/v1/townlight_contracts/expirations")
+@app.post("/api/v1/townlight_contracts/expirations", dependencies=[Depends(_require_staff_key)])
 def expiration_plan(request: ExpirationRequest) -> dict[str, object]:
     return build_expiration_plan(
         contract_id=request.contract_id,
@@ -143,7 +146,7 @@ def expiration_plan(request: ExpirationRequest) -> dict[str, object]:
     ).__dict__
 
 
-@app.post("/api/v1/townlight_contracts/renewals/summary")
+@app.post("/api/v1/townlight_contracts/renewals/summary", dependencies=[Depends(_require_staff_key)])
 def renewal_summary(request: RenewalRequest) -> dict[str, object]:
     if _registry_database_url() is not None:
         stored = _get_registry_repository().create_renewal_summary(
@@ -161,7 +164,7 @@ def renewal_summary(request: RenewalRequest) -> dict[str, object]:
     return result.__dict__
 
 
-@app.get("/api/v1/townlight_contracts/renewals/{contract_id}")
+@app.get("/api/v1/townlight_contracts/renewals/{contract_id}", dependencies=[Depends(_require_staff_key)])
 def get_renewal_summary(contract_id: str) -> dict[str, object]:
     if _registry_database_url() is None:
         raise HTTPException(
@@ -183,7 +186,7 @@ def get_renewal_summary(contract_id: str) -> dict[str, object]:
     return _stored_renewal_response(stored)
 
 
-@app.post("/api/v1/townlight_contracts/export")
+@app.post("/api/v1/townlight_contracts/export", dependencies=[Depends(_require_staff_key)])
 def records_export(request: RecordsExportRequest) -> dict[str, object]:
     return build_contract_records_export(
         contract_id=request.contract_id,

@@ -8,7 +8,7 @@ from townlight_contracts.main import app, _dispose_registry_repository
 from townlight_contracts.persistence import ContractRegistryRepository
 
 
-client = TestClient(app)
+client = TestClient(app, headers={"X-Townlight-Contracts-Staff-Key": "test-only-key", "X-Townlight-Contracts-Role": "staff"})
 
 
 def test_repository_persists_contract_and_renewal_summary(tmp_path: Path) -> None:

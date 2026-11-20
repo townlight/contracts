@@ -4,9 +4,10 @@ import re
 import sys
 from pathlib import Path
 
+# Authentication is a real contract in pinned Core 1.3.0.dev2.
+# Keep unrelated placeholder prohibitions; permit the shared fail-closed staff gate.
 PLACEHOLDERS = {
     "audit",
-    "auth",
     "catalog",
     "connectors",
     "exemptions",
