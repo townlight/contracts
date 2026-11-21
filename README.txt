@@ -1,8 +1,11 @@
-Windows 1.9.0.1 Station recorder release
+Windows 1.9.1.1 Station recorder release
 
-Windows 1.9.0.1 integrates Station setup, camera and microphone selection, renewable operator sessions and verified large-recording transfers to Records.
+Windows 1.9.1.1 improves the clerk workflows for Records, Meetings, and
+Code, adds Open Hall icons, and fixes the ten-second Station preview.
 
-Windows 1.9.0.1 has signed fresh-install acceptance, including Station recording, Records handoff and recovery. Set up Station during Townlight first run. Read the acceptance summary before upgrading.
+Windows 1.9.1.1 is a signed public beta. See the acceptance summary for
+the verified workflows and artifact identities. Set up Station during
+Townlight first run. Read the acceptance summary before upgrading.
 
 Release and downloads · Acceptance and limits.
 
@@ -10,26 +13,52 @@ Townlight Contracts
 
 Shared meeting imports · Windows 1.8.1.1
 
-Windows 1.8.1.1 adds shared meeting imports for 31 source families, with 34 supported source/format pairs. Installed Windows Sandbox checks exercised preview, save and durable readback using public captures and fixtures, plus the documented Townlight handoffs. These checks do not establish automatic discovery on every live portal or a complete retest of every module.
+Windows 1.8.1.1 adds shared meeting imports for 31 source families, with
+34 supported source/format pairs. Installed Windows Sandbox checks
+exercised preview, save and durable readback using public captures and
+fixtures, plus the documented Townlight handoffs. These checks do not
+establish automatic discovery on every live portal or a complete retest
+of every module.
 
 All 31 sources, formats and handoffs · Installed acceptance.
 
-Windows 1.9.0.1 has signed fresh-install acceptance, including Station recording, Records handoff and recovery. Set up Station during Townlight first run. Read the acceptance summary before upgrading.
+Windows 1.9.1.1 is a signed public beta. See the acceptance summary for
+the verified workflows and artifact identities. Set up Station during
+Townlight first run. Read the acceptance summary before upgrading.
 
-Windows 1.9.0.1 contains Station 0.4.0, Records 1.8.0.dev4, Townlight Runtime 0.3.2 and Meetings 1.0.6. Its current component sources and installed evidence are identified in the maintenance acceptance summary.
+Windows 1.9.1.1 contains Station 0.4.4, Records 1.8.0.dev4, Townlight
+Runtime 0.3.3 and Meetings 1.0.6. The release acceptance summary
+identifies the verified workflows and the builds that produced the
+evidence.
 
-Townlight Contracts is the Townlight module for central contract registry support, clause topic lookup, expiration tracking, renewal visibility, and public-records-aware exports.
+Townlight Contracts is the Townlight module for central contract
+registry support, clause topic lookup, expiration tracking, renewal
+visibility, and public-records-aware exports.
 
 In the Windows suite
 
-Register executed agreements, store their signed PDFs, and track staff-entered renewal deadlines. Install the signed Townlight Windows beta 1.8.1.1 and select the full profile. See the staff operating guide. The package examples below describe the standalone development interface.
+Register executed agreements, store their signed PDFs, and track
+staff-entered renewal deadlines. Install the signed Townlight Windows
+beta 1.8.1.1 and select the full profile. See the staff operating guide.
+The package examples below describe the standalone development
+interface.
 
-Current state: v0.2.1 contract repository foundation plus registry persistence release. This repo ships a FastAPI package, health/root endpoints, documentation gates, deterministic sample contract registry, clause topic lookup, expiration tracking helper, renewal visibility helper, optional database-backed contract registry and renewal visibility records, public-records export checklist, and accessible public sample UI at /townlight_contracts, aligned to townlight-core==1.3.0.dev2. It does not ship live contract management platforms, official legal interpretation, legal advice, live LLM calls, contract execution workflows, or contract system-of-record integrations.
+Current state: v0.2.1 contract repository foundation plus registry
+persistence release. This repo ships a FastAPI package, health/root
+endpoints, documentation gates, deterministic sample contract registry,
+clause topic lookup, expiration tracking helper, renewal visibility
+helper, optional database-backed contract registry and renewal
+visibility records, public-records export checklist, and accessible
+public sample UI at /townlight_contracts, aligned to
+townlight-core==1.3.0.dev2. It does not ship live contract management
+platforms, official legal interpretation, legal advice, live LLM calls,
+contract execution workflows, or contract system-of-record integrations.
 
 What Townlight Contracts Does
 
 - Create sample contract registry stubs and review notes.
-- Persist contract registry and renewal visibility records when TOWNLIGHT_CONTRACTS_REGISTRY_DB_URL is configured.
+- Persist contract registry and renewal visibility records when
+  TOWNLIGHT_CONTRACTS_REGISTRY_DB_URL is configured.
 - Flag common clause topics for staff/legal review.
 - Build expiration reminder plans.
 - Summarize renewal visibility without approving renewals.
@@ -49,17 +78,27 @@ API Surface
 - GET / returns the shipped/planned boundary.
 - GET /health returns package and Townlight Core versions.
 - GET /townlight_contracts returns the accessible public sample UI.
-- POST /api/v1/townlight_contracts/registry returns a sample contract registry stub.
-- GET /api/v1/townlight_contracts/registry/{contract_id} retrieves a persisted contract registry record when TOWNLIGHT_CONTRACTS_REGISTRY_DB_URL is configured.
-- POST /api/v1/townlight_contracts/clauses/lookup returns clause topic flags.
-- POST /api/v1/townlight_contracts/expirations returns expiration reminders.
-- POST /api/v1/townlight_contracts/renewals/summary returns renewal visibility items.
-- GET /api/v1/townlight_contracts/renewals/{contract_id} retrieves a persisted renewal visibility record when TOWNLIGHT_CONTRACTS_REGISTRY_DB_URL is configured.
-- POST /api/v1/townlight_contracts/export returns a public-records export checklist.
+- POST /api/v1/townlight_contracts/registry returns a sample contract
+  registry stub.
+- GET /api/v1/townlight_contracts/registry/{contract_id} retrieves a
+  persisted contract registry record when
+  TOWNLIGHT_CONTRACTS_REGISTRY_DB_URL is configured.
+- POST /api/v1/townlight_contracts/clauses/lookup returns clause topic
+  flags.
+- POST /api/v1/townlight_contracts/expirations returns expiration
+  reminders.
+- POST /api/v1/townlight_contracts/renewals/summary returns renewal
+  visibility items.
+- GET /api/v1/townlight_contracts/renewals/{contract_id} retrieves a
+  persisted renewal visibility record when
+  TOWNLIGHT_CONTRACTS_REGISTRY_DB_URL is configured.
+- POST /api/v1/townlight_contracts/export returns a public-records
+  export checklist.
 
 Optional Persistence
 
-Set TOWNLIGHT_CONTRACTS_REGISTRY_DB_URL to enable local SQLAlchemy-backed contract registry and renewal visibility records.
+Set TOWNLIGHT_CONTRACTS_REGISTRY_DB_URL to enable local
+SQLAlchemy-backed contract registry and renewal visibility records.
 
 Local Development
 
@@ -69,10 +108,23 @@ Local Development
 
 License
 
-Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See LICENSE and LICENSE-EXCEPTION.md. Documentation is CC BY 4.0.
+Code: AGPL-3.0-only, with the TownLight Public Institution Exception for
+qualifying deployments. See LICENSE and LICENSE-EXCEPTION.md.
+Documentation is CC BY 4.0.
 
 Standalone staff API authentication — unreleased source correction
 
-The standalone /api/v1/townlight_contracts/ endpoints require X-Townlight-Contracts-Role: staff and X-Townlight-Contracts-Staff-Key: <configured secret>. Set TOWNLIGHT_CONTRACTS_STAFF_API_KEY in the service environment; never place the secret in URLs or public examples. Missing configuration returns 503; missing, invalid or non-staff credentials return 403. Health and the deterministic sample page remain public. This reuses Core’s staff-key contract and is not individual staff-account administration.
+The standalone /api/v1/townlight_contracts/ endpoints require
+X-Townlight-Contracts-Role: staff and
+X-Townlight-Contracts-Staff-Key: <configured secret>. Set
+TOWNLIGHT_CONTRACTS_STAFF_API_KEY in the service environment; never
+place the secret in URLs or public examples. Missing configuration
+returns 503; missing, invalid or non-staff credentials return 403.
+Health and the deterministic sample page remain public. This reuses
+Core’s staff-key contract and is not individual staff-account
+administration.
 
-The installed Windows suite uses its existing named staff sessions and role checks through municipal_staff.py, rather than this standalone API. This source correction is not present in the unchanged Windows 1.8.1.1 MSI.
+The installed Windows suite uses its existing named staff sessions and
+role checks through municipal_staff.py, rather than this standalone API.
+This source correction is not present in the unchanged Windows 1.8.1.1
+MSI.
