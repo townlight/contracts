@@ -1,8 +1,8 @@
-## Windows 1.9.3.2 current release
+## Windows 1.10.0.1 current release
 
-Townlight for Windows 1.9.3.2 is the current signed public beta. See the [release notes](https://github.com/townlight/townlight/releases/tag/townlight-windows-v1.9.3.2) and [acceptance record](https://github.com/townlight/townlight/releases/download/townlight-windows-v1.9.3.2/ACCEPTANCE-Windows-1.9.3.2.md).
+Townlight for Windows 1.10.0.1 is the current signed public beta. See the [release notes](https://github.com/townlight/townlight/releases/tag/townlight-windows-v1.10.0.1) and [acceptance record](https://github.com/townlight/townlight/releases/download/townlight-windows-v1.10.0.1/ACCEPTANCE-Windows-1.10.0.1.md).
 
-For an existing city, make and verify a backup, close Townlight, run the signed Windows 1.9.3.2 MSI, then reopen Townlight under the same Windows account and existing profile. Direct upgrade is tested from 1.9.3.1; earlier paths have separate prior evidence.
+For an existing city, make and verify a backup, close Townlight, run the signed Windows 1.10.0.1 MSI, then reopen Townlight under the same Windows account and existing profile. Direct upgrade is tested from 1.9.3.2; earlier paths have separate prior evidence.
 
 ## Windows 1.9.1.1 historical Station recorder release
 
@@ -29,7 +29,7 @@ Townlight Contracts helps city staff keep contract records, clause topics, expir
 
 ## In the Windows suite
 
-Register executed agreements, store their signed PDFs, and track staff-entered renewal deadlines. Install the [signed Townlight Windows beta 1.9.3.2](https://github.com/townlight/townlight/releases/tag/townlight-windows-v1.9.3.2) and select the full profile. See the [staff operating guide](https://townlight.github.io/manuals/windows-staff-workflows.html#contracts). The package examples below describe the standalone development interface.
+Register executed agreements, store their signed PDFs, and track staff-entered renewal deadlines. Install the [signed Townlight Windows beta 1.10.0.1](https://github.com/townlight/townlight/releases/tag/townlight-windows-v1.10.0.1) and select the full profile. See the [staff operating guide](https://townlight.github.io/manuals/windows-staff-workflows.html#contracts). The package examples below describe the standalone development interface.
 
 Current state: `0.2.1` contract repository foundation plus registry persistence release. Townlight Contracts can optionally save contract registry and renewal visibility records when IT configures `TOWNLIGHT_CONTRACTS_REGISTRY_DB_URL`. Townlight Contracts does not provide official legal interpretation, legal advice, live contract management platforms, live LLM calls, contract execution workflows, renewal approvals, or contract system-of-record updates. Staff own every decision.
 

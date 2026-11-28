@@ -1,8 +1,8 @@
-Windows 1.9.3.2 current release
+Windows 1.10.0.1 current release
 
-Townlight for Windows 1.9.3.2 is the current signed public beta. See the release notes and acceptance record.
+Townlight for Windows 1.10.0.1 is the current signed public beta. See the release notes and acceptance record.
 
-For an existing city, make and verify a backup, close Townlight, run the signed Windows 1.9.3.2 MSI, then reopen Townlight under the same Windows account and existing profile. Direct upgrade is tested from 1.9.3.1; earlier paths have separate prior evidence.
+For an existing city, make and verify a backup, close Townlight, run the signed Windows 1.10.0.1 MSI, then reopen Townlight under the same Windows account and existing profile. Direct upgrade is tested from 1.9.3.2; earlier paths have separate prior evidence.
 
 Windows 1.9.1.1 historical Station recorder release
 
@@ -24,7 +24,7 @@ Townlight Contracts is the Townlight module for central contract registry suppor
 
 In the Windows suite
 
-Register executed agreements, store their signed PDFs, and track staff-entered renewal deadlines. Install the signed Townlight Windows beta 1.9.3.2 and select the full profile. See the staff operating guide. The package examples below describe the standalone development interface.
+Register executed agreements, store their signed PDFs, and track staff-entered renewal deadlines. Install the signed Townlight Windows beta 1.10.0.1 and select the full profile. See the staff operating guide. The package examples below describe the standalone development interface.
 
 Current state: v0.2.1 contract repository foundation plus registry persistence release. This repo ships a FastAPI package, health/root endpoints, documentation gates, deterministic sample contract registry, clause topic lookup, expiration tracking helper, renewal visibility helper, optional database-backed contract registry and renewal visibility records, public-records export checklist, and accessible public sample UI at /townlight_contracts, aligned to townlight-core==1.3.0.dev2. It does not ship live contract management platforms, official legal interpretation, legal advice, live LLM calls, contract execution workflows, or contract system-of-record integrations.
 
